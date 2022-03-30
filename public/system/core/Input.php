@@ -384,13 +384,14 @@ class CI_Input {
 					$flag = FILTER_FLAG_IPV6;
 					break;
 				default:
-					$flag = '';
+					$flag = FILTER_DEFAULT;
 					break;
 			}
 
 			return (bool) filter_var($ip, FILTER_VALIDATE_IP, $flag);
 		}
 
+		
 		if ($which !== 'ipv6' && $which !== 'ipv4')
 		{
 			if (strpos($ip, ':') !== FALSE)
